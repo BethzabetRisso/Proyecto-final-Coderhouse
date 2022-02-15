@@ -1,0 +1,39 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <div class="form-group">
+      <label for="titulo" class="txt_negrita">Titulo</label>
+      {{ form.titulo|add_class:"form-control" }} 
+    </div>
+    <div class="form-group">
+      <label for="contenido" class="txt_negrita">Contenido</label>
+      {{ form.contenido|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+      <label for="autor" class="txt_negrita">Autor</label>
+      {{ form.autor|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+        <label for="categorias" class="txt_negrita">Categoria</label>
+        {{ form.categorias|add_class:"form-control" }}
+    </div>
+    <div class="form-group">
+      <label for="img" class="txt_negrita">Imagen</label>
+      {{ form.img|add_class:"form-control mb-3" }}
+      <p class="txt_negrita">Imagen Actual:</p>
+      <img src="{% static 'uploads/'%}{{object.img}}" class="img-fluid" alt="{{object.nombre}}">
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Aceptar</button>
+    <a href="../" type="submit" class="btn btn-primary">Volver</a>
+   
+  </form>
+
+[% endblock %]

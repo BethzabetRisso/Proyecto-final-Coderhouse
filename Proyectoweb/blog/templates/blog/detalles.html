@@ -1,0 +1,22 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<h4>Leer mas</h4>
+ 
+<p><span class="txt_negrita">Titulo:</span> <br> {{object.titulo}}</p>
+<p><span class="txt_negrita">Contenido:</span> <br> {{object.contenido}}</p>
+<p><span class="txt_negrita">Autor:</span> <br> {{object.autor}}</p>
+<p><span class="txt_negrita">categorias:</span> <br> {{object.categoria}}</p>
+<p><span class="txt_negrita">Imagen:</span> <br> <img src="{% static 'uploads/'%}{{object.img}}" alt="{{object.nombre}}" class="img-fluid"> </p>
+<p><span class="txt_negrita">Creado:</span> <br> {{object.created_at}}</p>
+<p><span class="txt_negrita">Actualizado:</span> <br> {{object.updated_at}}</p>
+
+ 
+<a href="/" type="submit" class="btn btn-primary">Volver</a>
+
+
+[% endblock %]
