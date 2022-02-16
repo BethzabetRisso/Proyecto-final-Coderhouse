@@ -7,13 +7,13 @@ from django.contrib.auth.models import User
 
 
 class UserCreationFormsWithEmail(UserCreationForm):
-    email = forms.EmailField(required=True, help_text= 'Ingrese un email valido')
+    email = forms.EmailField(required=True)
     class Meta:
         model  =User
         fields = ('username','email','password1','password2')
 
 class EmailForm(forms.ModelForm):
-    email = forms.EmailField(required=True, max_length=200, help_text= 'Ingrese un email valido')
+    email = forms.EmailField(required=True, max_length=200)
     class Meta:
         model = User
         fields = ['email']
