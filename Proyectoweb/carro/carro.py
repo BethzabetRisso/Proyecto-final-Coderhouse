@@ -9,7 +9,6 @@ class Carro:
             self.carro = self.session['carro']
         else:
             self.carro = carro
-        
 
     def agregar(self, producto):
         id = str(producto.id)
@@ -17,18 +16,17 @@ class Carro:
             self.carro[id] = {
                 "producto_id": producto.id,
                 "nombre": producto.nombre,
-                "precio": str(producto.precio),
+                "precio": float(producto.precio),
                 "cantidad": 1,
                 "imagen": producto.imagen.url,
             }
         else:
-            # self.carro[id]["cantidad"] += 1
-            # self.carro[id]["precio"] += str(producto.precio)
-        #self.guardar_carro()
+
             for key, value in self.carro.items():
-                if key == producto.id:
+                if key == id:
                     value["cantidad"] = value["cantidad"] + 1
-                    value["precio"]= float(value["precio"]) + float(producto.precio)
+                    value["precio"] = float(
+                        value["precio"]) + float(producto.precio)
                     break
         self.guardar_carro()
 
@@ -44,20 +42,21 @@ class Carro:
 
     def restar_producto(self, producto):
         id = str(producto.id)
-        if id in self.carro.keys():
-            self.carro[id]["cantidad"] -= 1
-            self.carro[id]["precio"] -= str(producto.precio)
-            #if self.carro[id]["cantidad"] <= 0: self.eliminar(producto)
-            #self.guardar_carro
+        if id not in self.carro.keys():
+            self.carro[id] = {
+                "producto_id": producto.id,
+                "nombre": producto.nombre,
+                "precio": float(producto.precio),
+                "cantidad": 1,
+                "imagen": producto.imagen.url,
+            }
+        else:
 
-
-        for key, value in self.carro.items():
-            if key == str(producto.id):
-                value["cantidad"] = value["cantidad"] - 1
-                value["precio"]=float(value["precio"])-producto.precio
-                if value["cantidad"]<1:
-                    self.eliminar(producto)
-                break
+            for key, value in self.carro.items():
+                if key == id:
+                    value["cantidad"] = value["cantidad"] - 1
+                    value["precio"]= float(value["precio"]) - float(producto.precio)
+                    break
         self.guardar_carro()
 
     def limpiarCarro(self):

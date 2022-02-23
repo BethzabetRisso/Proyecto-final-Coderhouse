@@ -6,84 +6,15 @@
 
 
 
-.more {
-    cursor: pointer;
-    background-color: #ccf;
-  }
-  
-  .complete {
-    display: none;
-  }
-  
-  input.showmore {
-    display: none;
-  }
-  
-  input.showmore~label.more span.menos {
-    display: none;
-  }
-  
-  input.showmore:checked+.complete {
-    display: block;
-  }
-  
-  input.showmore:checked~label.more span.mas {
-    display: none;
-  }
-  
-  input.showmore:checked~label.more span.menos {
-    display: inline;
-  }
-  <div class="text-comment">
-    <p class="text-par">"Vision"</p>
-    <p class="text-name">
-      <span class="summary">
-        <p>Lorem ipsum dolor sit amet, vis alterum feugiat sanctus ea. Affert facete eu cum, ut dicta vitae quo. Cum
-  id aeque option epicuri, nec oblique suscipit ad. Et sea odio adhuc altera. Verterem nominati an mel, his
-  diam consetetur ei. Eligendi principes sed no, ubique patrioque vix cu, soluta veritus percipit vim ex.</p>
-      </span>
-      <input id="showmore_1" type="checkbox" class="showmore">
-      <span class="complete">
-        <p>Pro populo dolorem eu. Justo conclusionemque sea ne. At dicat putent eum. Reprimique delicatissimi vel et.</p>
-        <p>Posse constituam pro eu. Sit graecis appetere at, id his quas possit platonem, ius at nobis decore ullamcorper.
-  Vix ne latine iudicabit constituto, justo fastidii eleifend et pro, ei sit solet dicant mediocrem. Te sit
-  cibo percipit persecuti. Debet convenire suavitate ei vis. Pri utinam labitur temporibus ex.</p>
-      </span>
-      <label for="showmore_1" class="more">Leer <span class="mas">mas</span> <span class="menos">menos</span> ...</label>
-    </p>
-  </div>
-  
-  <div class="text-comment">
-    <p class="text-par">"Thanos"</p>
-    <p class="text-name">
-      <span class="summary">
-        <p>Lorem ipsum dolor sit amet, vis alterum feugiat sanctus ea. Affert facete eu cum, ut dicta vitae quo. Cum
-  id aeque option epicuri, nec oblique suscipit ad. Et sea odio adhuc altera. Verterem nominati an mel, his
-  diam consetetur ei. Eligendi principes sed no, ubique patrioque vix cu, soluta veritus percipit vim ex.</p>
-      </span>
-      <input id="showmore_2" type="checkbox" class="showmore">
-      <span class="complete">
-        <p>Pro populo dolorem eu. Justo conclusionemque sea ne. At dicat putent eum. Reprimique delicatissimi vel et.</p>
-        <p>Posse constituam pro eu. Sit graecis appetere at, id his quas possit platonem, ius at nobis decore ullamcorper.
-  Vix ne latine iudicabit constituto, justo fastidii eleifend et pro, ei sit solet dicant mediocrem. Te sit
-  cibo percipit persecuti. Debet convenire suavitate ei vis. Pri utinam labitur temporibus ex.</p>
-      </span>
-      <label for="showmore_2" class="more">Leer <span class="mas">mas</span> <span class="menos">menos</span> ...</label>
-    </p>
-  </div>
+<div style="color: white;">
+  <h3>INFORMACION DEL POST</h3>
+  {{post.titulo}}
+  <img src="{{post.imagen.url}}">
+  {{post.contenido}}
+  {{post.autor}}
 
-<!-- <h4>Leer mas</h4>
- 
-<p><span class="txt_negrita">Titulo:</span> <br> {{object.titulo}}</p>
-<p><span class="txt_negrita">Contenido:</span> <br> {{object.contenido}}</p>
-<p><span class="txt_negrita">Autor:</span> <br> {{object.autor}}</p>
-<p><span class="txt_negrita">categorias:</span> <br> {{object.categoria}}</p>
-<p><span class="txt_negrita">Imagen:</span> <br> <img src="{% static 'uploads/'%}{{object.img}}" alt="{{object.nombre}}" class="img-fluid"> </p>
-<p><span class="txt_negrita">Creado:</span> <br> {{object.created_at}}</p>
-<p><span class="txt_negrita">Actualizado:</span> <br> {{object.updated_at}}</p>
-
- 
-<a href="/" type="submit" class="btn btn-primary">Volver</a> -->
+</div>
 
 
-[% endblock %]
+
+{% endblock %}

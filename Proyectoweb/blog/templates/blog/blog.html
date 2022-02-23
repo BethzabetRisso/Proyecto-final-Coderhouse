@@ -5,13 +5,13 @@
 {% block content %}
 
 <!-- a partir de aca abajo se escribe el contenido del template -->
-{% for post in object_list %}
+{% for post in posts %}
 
 <!-- Heading -->
 <section class="page-section clearfix">
     <div class="container">
         <div class="intro">
-            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{post.media.url}}" alt="" style="width: 50%;">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{post.imagen.url}}" alt="" style="width: 50%;">
             <div class="intro-text left-0 text-center bg-faded p-5 rounded">
                 <h2 class="section-heading mb-4">
                     <span class="section-heading-lower">{{post.titulo}}</span>
@@ -24,11 +24,7 @@
                         {% csrf_token %}
                         <div class="btn-group">
                
-                          <a href="detalle/{{post.id}}" title="Ver" type="button" class="btn btn-success">Ver </a>
-                          <a href="editar/{{post.id}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
-                          <button class="btn btn-danger" onclick="return eliminar();" type="submit">
-                            Eliminar
-                          </button>
+                          <a href="detalles/{{post.id}}" title="Ver" type="button" class="btn btn-success">Ver </a>
                         </div>
                       </form>
 
