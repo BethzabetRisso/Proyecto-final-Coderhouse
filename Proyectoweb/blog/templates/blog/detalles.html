@@ -6,12 +6,23 @@
 
 
 
-<div style="color: white;">
-  <h3>{{post.titulo}}</h3>
+<div class="contenedorFormulario" style="color: white;">
+  <div class="externo">
+    <div>
+      <span style="text-transform:uppercase"><b>{{post.titulo}}</b> <br><br><br></span>
+      
+    </div>
+  </div>
   
-  <img src="{{post.imagen.url}}"> <br>
+  <div class="externo"> 
+    <img src="{{post.imagen.url}}" width="75%" height="75%"> <br><br><br>
+  </div>
+  
+  <div style="font-family: Arial, Helvetica, sans-serif;">
+{{post.contenido}}
+  </div class="externo">
 
-  {{post.contenido}}
+  
   {{post.autor}}
 
 </div>
