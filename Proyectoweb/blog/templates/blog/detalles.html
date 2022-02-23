@@ -7,14 +7,13 @@
 
 
 <div style="color: white;">
-  <h3>INFORMACION DEL POST</h3>
-  {{post.titulo}}
-  <img src="{{post.imagen.url}}">
+  <h3>{{post.titulo}}</h3>
+  
+  <img src="{{post.imagen.url}}"> <br>
+
   {{post.contenido}}
   {{post.autor}}
 
 </div>
-
-
 
 {% endblock %}
